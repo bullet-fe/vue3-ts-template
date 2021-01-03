@@ -1,0 +1,41 @@
+"use strict";
+const { merge } = require("webpack-merge");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const commonConfig = require("./webpack.common.js");
+
+const prodConfig = {
+    mode: 'production',
+    output: {
+        path: __dirname + "/dist",
+    },
+    module: {
+        rules: [
+            {
+                test: /\.less$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "less-loader",
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader"
+                ],
+            },
+        ]
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [{ from: "public" }],
+        }),
+        new MiniCssExtractPlugin()
+    ],
+};
+
+module.exports = merge(commonConfig, prodConfig);
