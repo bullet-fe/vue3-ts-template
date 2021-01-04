@@ -3,7 +3,6 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <img src="./assets/logo.png" alt="" srcset="">
   <router-view/>
 </template>
 

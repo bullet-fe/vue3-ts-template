@@ -1,6 +1,7 @@
 "use strict";
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require("vue-loader");
+const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
@@ -55,5 +56,12 @@ module.exports = {
             template: './public/index.html',
             title: 'vue3-ts-template'
         })
-    ]
+    ],
+    resolve: {
+        alias: {
+            '@': path.join(__dirname, 'src')
+        },
+        extensions: ['.js', '.ts']
+    },
+
 }
