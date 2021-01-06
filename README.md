@@ -14,3 +14,23 @@ characteristic:
 1. Customize project structure based on webpack5
 2. Based on the development of vue3, the introduction of vue3
 3. Use ts to write files and enhance types
+
+
+## use 使用
+
+### 安装依赖
+ `yarn`
+
+### 运行项目
+`yarn dev`
+
+### 打包
+`yarn build`
+
+### 文件信息
+
+webpack.common.js 通用配置文件
+
+webpack.dev.js  开发配置
+
+webpack.prod.js  打包配置

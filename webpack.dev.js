@@ -16,9 +16,9 @@ const devConfig = {
                 test: /\.less$/,
                 use: [
                     'vue-style-loader',
-                    'style-loader', // creates style nodes from JS strings
-                    'css-loader', // translates CSS into CommonJS
-                    'less-loader' // compiles Less to CSS
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
                 ]
             },
             {
