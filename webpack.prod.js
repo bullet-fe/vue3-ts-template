@@ -4,8 +4,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const commonConfig = require("./webpack.common.js");
-// 可以区分不同环境
+
+// 区分不同环境
 console.log(process.env.NODE_ENV)
+
 const prodConfig = {
     mode: 'production',
     output: {

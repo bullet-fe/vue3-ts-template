@@ -15,7 +15,6 @@ const devConfig = {
             {
                 test: /\.less$/,
                 use: [
-                    'vue-style-loader',
                     'style-loader',
                     'css-loader',
                     'less-loader'
@@ -24,10 +23,8 @@ const devConfig = {
             {
                 test: /\.css$/,
                 use: [
-                    'vue-style-loader',
                     'style-loader',
-                    'css-loader',
-                    'postcss-loader'
+                    'css-loader'
                 ]
             }
         ]

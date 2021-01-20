@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {ref, defineComponent, onMounted} from 'vue';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 export default defineComponent({
@@ -14,5 +14,21 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
+  data(){
+    return{
+        number:10
+    }
+  },
+  setup(props, context){
+    const count = ref(0)
+    onMounted(() => {
+          console.log('onMounted',props, context, count)
+      })
+  }
 });
 </script>
+<style lang="less" scoped>
+.home{
+  width: 100vw;
+}
+</style>
