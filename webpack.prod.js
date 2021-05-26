@@ -3,6 +3,7 @@ const { merge } = require("webpack-merge");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const commonConfig = require("./webpack.common.js");
 
 // 区分不同环境
@@ -37,7 +38,8 @@ const prodConfig = {
         new CopyWebpackPlugin({
             patterns: [{ from: "public" }],
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new BundleAnalyzerPlugin()
     ],
 };
 

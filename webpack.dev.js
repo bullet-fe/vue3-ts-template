@@ -8,7 +8,8 @@ const devConfig = {
         contentBase: false,
         open: true,
         port: 8888,
-        hot: true
+        hot: true,
+        quiet: true
     },
     module: {
         rules: [

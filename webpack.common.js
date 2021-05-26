@@ -1,6 +1,8 @@
 "use strict";
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require("vue-loader");
+const MyPlugin = require('./MyPlugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const path = require('path')
 const webpack = require('webpack')
 
@@ -64,7 +66,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html',
             title: 'vue3-ts-template'
-        })
+        }),
+        new FriendlyErrorsWebpackPlugin({
+            // 成功的时候输出
+            compilationSuccessInfo: {
+                messages: [`Your application is running here: http://localhost:8888`]
+            },
+            // 是否每次都清空控制台
+            clearConsole: true,
+        }),
+        new MyPlugin()
     ],
     resolve: {
         // 定义路径
